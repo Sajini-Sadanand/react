@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        function Book(props){ //props receives the parameter
+            const eBook = props.eBook;
+            return(
+                <div>
+                    {eBook.length >= 0 && 
+                        <h3>We have read {eBook.length} eBooks</h3>
+                    }
+                </div>
+            );
+        }
+        const title = ['JAVA','HTML','PERL'];
+        ReactDOM.render( 
+            <Book eBook={title}/>, //send a parameter "eBook={title}"
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>

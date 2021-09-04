@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        const chars = ["A","B","C","D"];
+        const letters = chars.map(
+            (chars)=><div>{chars}</div>
+        )
+        ReactDOM.render( 
+            <h3>{letters}</h3>, //send a parameter "eBook={title}"
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
