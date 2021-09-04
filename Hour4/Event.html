@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        class Book extends React.Component{
+            title(){ //event handler
+                alert("Perl in 8 Hours!");
+            }
+            render(){
+                return(
+                    <button onClick = {this.title}>Click Me!</button> //event
+                );
+            }
+        }
+        ReactDOM.render( 
+            <Book/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
