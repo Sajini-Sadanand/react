@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        var myArray = [
+        <h1>R in 8 Hours</h1>,
+        <h2>Go in 8 Hours</h2>,
+        <h3>Lua in 8 Hours</h3>,
+        <h4>R in 8 Hours</h4>
+        ]
+      ReactDOM.render( 
+          <div>{myArray}</div>,
+          document.getElementById('show')
+      );
+    </script>
+  </body>
+</html>
