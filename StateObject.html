@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        class Building extends React.Component{
+            constructor(){ //define a constructor
+                super();
+                this.state = {//initialization
+                    house:"The Palace:",
+                    type:"great villa",
+                    color:"light white",
+                    size:"10000 square meters"
+                };
+            }
+            render(){
+                return(
+                    <div>
+                        <h3>About {this.state.house}</h3>
+                        <h4>Color: {this.state.color}</h4>
+                        <h4>Type: {this.state.type}</h4>
+                        <h4>Size: {this.state.size}</h4>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render( 
+            <Building/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>

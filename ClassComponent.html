@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            render(){
+                return <h3> Perl in 8 Hours </h3>;
+            }
+        }//define a component by using a class
+        const element = <MyComponent/>;
+        ReactDOM.render( 
+            element,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
