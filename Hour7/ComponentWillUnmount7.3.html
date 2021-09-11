@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    display:true
+                };
+            }
+            delComponent = () =>{
+                this.setState({display:false});//set state false
+                this.componentWillUnmount();
+                //run when a component is unmounted
+            }
+            componentWillUnmount(){
+                alert("The component will be unmounted.");
+            }
+    
+            render(){
+                if(this.state.display){
+                    var text = <h3>Rust in 8 Hours!</h3>
+                };
+                return(
+                    <div>
+                    {text}
+                    <button type = "button" onClick={this.delComponent}>Delete Text
+                    </button>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyComponent/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>

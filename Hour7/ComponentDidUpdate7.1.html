@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+    <div id="memo"></div>
+    <script type="text/babel">
+        class Enjoyment extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    fruit1:"apple"
+                };
+            }
+            componentDidMount(){// run after render()
+                setTimeout(()=>{
+                    this.setState({fruit1:"banana"}) // set up a new value
+                },2000) // after 2 seconds, "apple" changes to "banana"
+            }
+            componentDidUpdate(){
+                document.getElementById("memo").innerHTML = "Now! His favourite is exactly " + this.state.fruit1;
+            } // run after the component has been updated
+            render(){
+                return(
+                    <h3>His favourite fruit is {this.state.fruit1}</h3>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Enjoyment/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
