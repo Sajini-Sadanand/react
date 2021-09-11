@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        class Enjoyment extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    fruit1:"apple"
+                };
+            }
+            static getDerivedStateFromProps(props,state){
+                return {fruit1:props.fruit2}; //update fruit1 as fruit2
+            }
+            render(){
+                return(
+                    <h3>His favourite fruit is {this.state.fruit1}</h3>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Enjoyment fruit2 = "banana"/>,//sets new state
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>

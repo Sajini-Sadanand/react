@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            render(){
+                return(
+                    <b>I am the example of render() function!</b>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyComponent/>,//sets new state
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
