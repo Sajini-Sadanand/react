@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+    <script type="text/babel">
+        class MyForm extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    name:''
+                };
+            }
+            submitFunc = (event)=>{ // trigger submit event
+                alert("Dear " + this.state.name + ", Thank you!");
+            }
+            handle = (event) =>{//trigger the event
+                this.setState({name:event.target.value});//update value
+            } // "event.target.value" access the text field value
+            render(){
+                return(
+                    <form onSubmit={this.submitFunc}>
+                        <p>Please input your name</p>
+                        <input type='text' onChange = {this.handle}/>
+                        <input type='submit'/>
+                        <h2>Your name is:{this.state.name}</h2>
+                    </form>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyForm/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
