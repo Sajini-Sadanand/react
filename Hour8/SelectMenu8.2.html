@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+    <script type="text/babel">
+        class Book extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    value:'Go'
+                };
+            }
+            changeFunc = (event) =>{//trigger the event
+                this.setState({value:event.target.value});//update value
+            } // "event.target.value" access the text field value
+            submitFunc = (event) =>{
+                alert('Your favourite subject is: '+this.state.value);
+            }
+            render(){
+                return(
+                    <form onSubmit={this.submitFunc}>
+                    <label>
+                    Please select your favourite book:
+                    <p>
+                    <select value={this.state.value} onChange={this.changeFunc}>
+                    <option value="Go">Go in 8 Hours</option>
+                    <option value="Lua">Lua in 8 Hours</option>
+                    <option value="Rust">Rust in 8 Hours</option>
+                    <option value="Scala">Scala in 8 Hours</option>
+                    <option value="Django">Django in 8 Hours</option>
+                    </select>
+                    </p>
+                    </label>
+                    <input type="submit" value ="Submit"/>
+                    </form>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Book/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>

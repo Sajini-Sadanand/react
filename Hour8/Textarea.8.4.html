@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="show"></div>
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    description:''
+                };
+            }
+            handle = (event) =>{//trigger the event
+                this.setState({description:event.target.value});//update value
+            } // "event.target.value" access the text field value
+            render(){
+                return(
+                <form>
+                <p>Please input your description:</p>
+                <textarea onChange={this.handle}/>
+                <h3>Your description is:{this.state.description}</h3>
+                </form>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyComponent/>,
+            document.getElementById('show')
+        );
+    </script>
+  </body>
+</html>
